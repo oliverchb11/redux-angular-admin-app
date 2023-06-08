@@ -1,0 +1,57 @@
+<nav class="sidebar sidebar-offcanvas">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <div class="nav-link">
+
+                <div class="user-wrapper">
+                    <div class="profile-image">
+                        <img src="assets/images/faces/face1.jpg" alt="profile image">
+                    </div>
+
+                    <div class="text-wrapper">
+                        <p class="profile-name" style="color: white;">Cristobal Colón</p>
+                        <div>
+                            <small class="designation " style="color: white;">Gerente</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+
+        <li class="nav-item links">
+            <a class="nav-link" routerLink="/">
+                <i class="menu-icon fa fa-tachometer-alt" style="color: white;"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="nav-item links">
+            <a class="nav-link" routerLink="/ingreso-egreso">
+                <i class="menu-icon fa fa-clipboard-list" style="color: white;"></i>
+                <span class="menu-title">Ingresos y Egresos</span>
+            </a>
+        </li>
+
+        <li class="nav-item links">
+            <a class="nav-link" routerLink="/detail">
+                <i class="menu-icon fa fa-table" style="color: white;"></i>
+                <span class="menu-title">Detalle</span>
+            </a>
+        </li>
+        <li class="nav-item links">
+            <a class="nav-link" routerLink="/statistics">
+                <i class="menu-icon fas fa-chart-bar" style="color: white;"></i>
+                <span class="menu-title">Estadisticas</span>
+            </a>
+        </li>
+
+        <li class="nav-item links">
+            <a class="nav-link cursor" style="cursor: pointer;" (click)="logout()">
+                <i class="menu-icon fa fa-sign-out-alt" style="color: white;"></i>
+                <span class="menu-title">Cerrar sesión</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>
