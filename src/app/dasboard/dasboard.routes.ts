@@ -6,14 +6,15 @@ import { StatisticsComponent } from "../ingreso-egreso/statistics/statistics.com
 export const dasboardRoutes: Routes = [
     {
         path: 'ingreso-egreso',
-        component: IngresEgresoComponent
+        component: IngresEgresoComponent,
+        
       },
       {
         path: 'detail',
         component: DetailsComponent
       },
       {
-        path: '',
+        path: 'statistics',
         component: StatisticsComponent
       }
 ]
