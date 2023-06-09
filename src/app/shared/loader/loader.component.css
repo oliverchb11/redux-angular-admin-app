@@ -1,5 +1,5 @@
 .loader {
-    background: transparent url(assets/images/loader.svg) no-repeat scroll center;
+    background: transparent url('../../../assets/images/loader.svg') no-repeat scroll center;
     position: fixed;
     top: 0;
     left: 0;

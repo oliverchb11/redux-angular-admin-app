@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { listPrograming } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -24,6 +23,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { appReducers } from './app.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +41,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({list: listPrograming}),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule,
     ReactiveFormsModule,
@@ -50,6 +50,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
   ],
+  exports: [LoaderComponent],
   providers: [  { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })

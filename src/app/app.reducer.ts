@@ -1,13 +1,16 @@
-import { createReducer, on } from "@ngrx/store";
-import { listLenguajePrograming } from "./app.actions";
+import { ActionReducerMap } from '@ngrx/store';
+import * as ui from './shared/ui.reducer';
+import * as auth from './auth/auth.reducer';
 
 
-export const initialState:string[] = ['JS', 'JAVA'];
+export interface AppState {
+   ui: ui.State ,
+   auth: auth.State
+}
 
- const _listPrograming = createReducer(initialState,
-    on(listLenguajePrograming, (state) => state)
-    )
 
-export function listPrograming(state: any, action: any){
-    return _listPrograming(state, action)
+
+export const appReducers: ActionReducerMap<AppState> = {
+   ui:  ui.uiReducer,
+   auth: auth.authReducer
 }

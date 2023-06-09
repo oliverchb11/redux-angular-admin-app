@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent {
-  @Input({required: true}) loaders!: boolean
+  @Input({required: true}) loaders: boolean = false
 }
