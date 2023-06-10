@@ -7,30 +7,27 @@
                     Especifique el monto y el tipo
                 </p>
 
-                <form>
+                <form [formGroup]="form" (ngSubmit)="add(form.value)">
 
-                    <div class="form-group">
-                        <label>Descripción</label>
-                        <input type="text" class="form-control" placeholder="Descripción" name="descripcion">
+                    <div class="form-group" *ngFor="let item of ingreEgreFormData">
+                        <label>{{item.label}}</label>
+                        <input [type]="item.typeForm" class="form-control" [placeholder]="item.placeholder" [formControlName]="item.formControlName">
                     </div>
 
-                    <div class="form-group">
-                        <label>Monto</label>
-                        <input type="number" class="form-control" placeholder="Monto" name="monto">
-                        <p>
-                            Debe de ser un monto positivo
-                        </p>
-                    </div>
 
                     <div class="form-group">
                         <label>Tipo</label>
                         <br>
-                        <button type="button" class="btn btn-primary btn-block">Ingreso</button>
+                        <select name="" id="" class="form-control" formControlName="type">
+                            <option value="">Seleccione una opcion</option>
+                            <option value="ingreso">Ingreso</option>
+                            <option value="egreso">Egreso</option>
+                        </select>
                         <!-- <button type="button" class="btn btn-warning btn-block">Egreso</button> -->
                     </div>
 
                     <hr>
-                    <button type="button" class="btn btn-success mr-2">
+                    <button type="submit" class="btn btn-success mr-2" [disabled]="form.invalid">
                 <i class="fa fa-save"></i>
                 Agregar
               </button>
@@ -49,3 +46,5 @@
         </div>
     </div>
 </div>
+
+<app-loader [loaders]="loading"></app-loader>

@@ -10,3 +10,9 @@ export const alert = (title: string, icon: SweetAlertIcon, isConfirmed: Function
         }
     })
 }
+export const alertn = (title: string, icon: SweetAlertIcon) => {
+    Swal.fire({
+        title,
+        icon
+    })
+}

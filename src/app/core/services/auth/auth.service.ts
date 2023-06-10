@@ -31,6 +31,7 @@ export class AuthService implements OnDestroy{
   private store = inject(Store<AppState>);
   private subscribe!: Subscription 
   public idFields: any ;
+  private user!: User | null
   constructor() {
     
   }
@@ -43,15 +44,22 @@ export class AuthService implements OnDestroy{
 
 
   setUserStore(fbuser: any){
-    console.log(fbuser);
       if(fbuser !== null){
         this.subscribe = this.getUserById(`${fbuser.uid}/users`).subscribe((userFirabse: any) => {
         const user = User.formFireStore(userFirabse)
+        this.user = user;
+        console.log({...this.user});
+        
         this.store.dispatch(auth.setUser({user}))
       })
     }else{
+      this.user = null;
       this.store.dispatch(auth.unSetUser())
     }
+  }
+
+  get getUser(){
+    return {...this.user};
   }
 
    createUser({user, email, password}: registerData){
