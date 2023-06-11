@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AuthService } from './core/services/auth/auth.service';
+import { EgresoIngresoService } from './core/services/pages/egreso-ingreso.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent implements OnInit{
 
   title = '04-redux-admin-app';
   private auth = inject(AuthService)
+
 
   ngOnInit(): void {
     this.auth.initAuthListener()

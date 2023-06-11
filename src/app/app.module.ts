@@ -24,6 +24,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { appReducers } from './app.reducer';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { appReducers } from './app.reducer';
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    NgChartsModule
   ],
   exports: [LoaderComponent],
   providers: [  { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
