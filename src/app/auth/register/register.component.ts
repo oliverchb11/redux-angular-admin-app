@@ -58,13 +58,13 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy{
       console.log(response);
       
       alert(CREATE_OK, 'success', () => {
-        this.router.navigateByUrl('/login')
+        this.router.navigateByUrl('auth/login')
       })
       this.store.dispatch(ui.stopLoading())
       this.form.reset()
     } catch (error: any) {
       alert(CREATE_USER_EXITS, 'error', () => {
-        this.router.navigateByUrl('/register');
+        this.router.navigateByUrl('auth/register');
         this.store.dispatch(ui.stopLoading())
       })
     }

@@ -5,6 +5,10 @@
 }
 
 .chart .x {
-    width: 500px;
-    height: 300px;
+    width: 343px;
+    height: 235px;
+}
+
+.row-chart {
+    height: 484px !important;
 }

@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy{
       this.router.navigateByUrl('/')
     } catch (error) {
       alert('Email y/o password incorrectos', 'error', ()=> {
-        this.router.navigateByUrl('/login')
+        this.router.navigateByUrl('auth/login')
       })
       }
   }

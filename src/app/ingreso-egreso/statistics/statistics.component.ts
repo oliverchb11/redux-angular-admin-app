@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ChartData } from 'chart.js';
 import { AppState } from 'src/app/app.reducer';
+import { AppStateWhitIngreso } from '../ingreso-egreso.reducer';
 
 @Component({
   selector: 'app-statistics',
@@ -14,7 +15,7 @@ export class StatisticsComponent implements OnInit{
   public acumEgreso = 0;
   public totalIngreso = 0;
   public totalEgreso = 0;
-  private store = inject(Store<AppState>);
+  private store = inject(Store<AppStateWhitIngreso>);
 
   public doughnutChartLabels: string[] = [ 'Ingreso', 'Egreso' ];
   public doughnutChartData!: ChartData<'doughnut'>
